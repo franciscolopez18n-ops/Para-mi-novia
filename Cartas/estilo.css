@@ -1,0 +1,106 @@
+/******************************* ENLACE SECRETO **************************************************/
+.icono-deathnote {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: block;
+    cursor: pointer;
+    z-index: 1000; /* Que esté por encima */
+}
+
+.icono-deathnote img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease;
+}
+
+.icono-deathnote:hover img {
+    transform: scale(1.25);
+}
+/*************************************************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff8fb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+.botones {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.botones button {
+    background-color: #ffd7ec;
+    color: #e83e8c;
+    border: 2px solid #e83e8c;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin: 0 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botones button:hover {
+    background-color: #e83e8c;
+    color: white;
+}
+
+.contenido h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e83e8c;
+}
+
+.galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.galeria img, iframe, video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carta-doble {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.carta-doble img {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .galeria {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .galeria img, iframe, video {
+        width: 48%;
+    }
+
+    .carta-doble {
+        flex-direction: row;
+    }
+
+    .carta-doble img {
+        width: 48%;
+    }
+}
