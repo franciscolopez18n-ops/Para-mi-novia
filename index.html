@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Feliz 5 Meses 💕</title>
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+    <body>
+        <h1 class="titulo-feliz">¡¡¡FELICES 5 MESES JUNTOS!!!</h1>
+
+          <!-- Mensaje principal -->
+        <div class="contenedor">
+            <h1>💌 Mi amor</h1>
+            <p>
+              Han pasado ya <strong>5 meses</strong> desde que llegaste a mi vida… y todavía no entiendo cómo tuve tanta suerte de encontrarte.
+              Desde ese día, cada amanecer tiene tu nombre, cada canción me recuerda a ti, y cada momento lejos de ti se siente un poquito más frío.
+            </p>
+            <p>
+              No hay un solo día en que no piense en ti, no importa si estoy comiendo, entrenando, hablando, riendo…
+              Siempre estás en mi cabeza y en mi corazón. Eres mi pensamiento favorito, mi sueño más bonito, y la sonrisa que aparece sola cuando cierro los ojos.
+            </p>
+            <p><em>Eres la razon de mi despertar</em><br>
+               <em>el motivo de mi felcidad,</em><br>
+               <em>la razon de mi existir</em><br>
+               <em>y tus fotos me hacen vivir</em>
+            </p>
+            <p>
+              A veces me quedo mirándolas, embobado, preguntándome cómo puede existir algo tan hermoso en este mundo.
+              Sería capaz de dar media alma con tal de tener una foto tuya cuando te extraño, porque verte, aunque sea en una imagen, me hace feliz de una forma que no puedo explicar.
+            </p>
+            <p>
+              Amor, estar sin ti es como un abrazo sin brazos, como un paraíso sin ángeles, como un mundo sin color.
+              Sin ti, no encuentro mi felicidad. Tú eres la parte de mí que me hace querer vivir.
+            </p>
+            <p>
+              Gracias por existir, por ser como eres, por soportarme y por dejarme amarte.
+              Te prometo que, mientras yo viva, voy a hacer todo para verte feliz, para cuidar tu corazón como lo más valioso que tengo.
+            </p>
+            <p>
+              Hoy celebramos <strong>5 meses</strong>, pero en mi corazón ya vivimos mil vidas juntos.<br>
+              Y si me dejas, quiero mil más contigo.
+            </p>
+            <div class="frase-con-imagen">
+                <p class="frase-bonita">
+                  Te amo, <strong>mi blanquita</strong>.<br>
+                  Con cada parte de mí.<br>
+                  Con mi alma entera.<br>
+                  Por siempre tuyo,<br>
+                  <strong>Tu príncipe 💖</strong>
+                </p>
+                <img src="./Fondo/Mymelody.png" alt="My melody" width="175" height="175">
+              </div>
+            
+
+        </div>
+        <!--****************************** CARTAS ********************************************-->           
+        <a href="./Cartas/cartas.html" class="icono-carta">
+          <img id="imgCarta" src="./Cartas/Icono/Cerrado.png" alt="Carta" width="100" height="100">
+        </a>
+        <!--Bloquear-->
+        <script>
+          const imgCarta = document.getElementById('imgCarta');
+          imgCarta.addEventListener('contextmenu', e => {
+            e.preventDefault(); 
+          });
+        </script>
+        <!--************************************ MUSICA 1 *********************************************-->
+        <!-- Botón de música en esquina superior derecha -->
+        <div class="boton-musica">
+            <a href="#" onclick="toggleAudio(); return false;" id="playLink">
+              <img id="imgbts" src="./LOGOS/BTS.png" alt="BTS" width="100" height="100">
+            </a>
+        </div>
+        <!--Bloquear-->
+        <script>
+          const imgbts = document.getElementById('imgbts');
+          imgbts.addEventListener('contextmenu', e => {
+            e.preventDefault(); 
+          });
+        </script>
+        <!-- Audio -->
+        <audio id="music" preload="auto">
+            <source src="./Musica/Boy With Luv - BTS feat. Halsey (Traducida al español).mp3" type="audio/mp3">
+        </audio>
+        
+        <!--/////////////// Script de música ///////////////-->
+        <script>
+            const audio = document.getElementById('music');
+            audio.volume = 0.35;
+        
+            function toggleAudio() {
+              const link = document.getElementById('playLink');
+              if (audio.paused) {
+                  audio.play();
+              } else {
+                  audio.pause();
+              }
+            }
+        </script>
+        <!--**************************** GIF BAILE MUSICA 2 *********************************************-->
+        <!-- Imagen de Hello Kitty que actúa como botón -->
+        <img id="helloKittyBoton" src="./Fondo/hello-kitty-gif-pixel.png" alt="Hello Kitty" onclick="toggleHelloKitty()" class="hello-kitty-boton" width="150" height="150">
+        <!--Bloquear-->
+        <script>
+          const helloKittyBoton = document.getElementById('helloKittyBoton');
+          helloKittyBoton.addEventListener('contextmenu', e => {
+            e.preventDefault(); 
+          });
+        </script>
+
+        <audio id="helloKittyAudio" src="./Musica/HelloKitty.mp3"></audio>
+
+        <!--/////////////// Script de música ///////////////-->
+        <script>
+          function toggleHelloKitty() {
+            const img = document.getElementById("helloKittyBoton");
+            const audio = document.getElementById("helloKittyAudio");
+            audio.volume = 0.35;
+
+            if (audio.paused) {
+              audio.play();
+              img.src = "./Fondo/Hello Kitty Pink GIF.gif"; 
+            } else {
+              audio.pause();
+              img.src = "./Fondo/hello-kitty-gif-pixel.png"; 
+            }
+
+            // Cuando termina la canción, vuelve a la imagen quieta
+            audio.onended = () => {
+              img.src = "./Fondo/hello-kitty-gif-pixel.png";
+            };
+          }
+        </script>
+        
+        <!--*************************** PAGINA SECRETA ***********************************************-->
+        <a href="./Matrimonio/Death Note.html" class="icono-deathnote">
+          <img src="./Matrimonio/Logo/opcion 2.png" alt="Icono Death Note" width="150" height="150" id="iconoDeathNote">
+        </a>
+        <!--Bloquear clic derecho en la imagen-->
+        <script>
+          const icono = document.getElementById("iconoDeathNote");
+          icono.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+          });
+        </script>
+        <!--*************************** ENLACES A PAGINAS ***********************************************-->
+
+
+
+
+
+    </body>
+</html>

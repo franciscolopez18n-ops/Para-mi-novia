@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Death Note Misteriosa</title>
+    <link rel="stylesheet" href="./estilo2.css">
+</head>
+<body>
+  
+    <div id="mensaje" class="mensaje">Pulsa en la libreta misteriosa para avanzar</div>
+
+    <div class="contenedor-libreta">
+        <img src="./Imagenes/death note.png" alt="Death Note" id="libreta" width="250" height="250"/>
+    </div>
+    
+    <audio id="audio-clic" src="./musica.mp3" loop></audio>
+    <script>
+      const libreta = document.getElementById("libreta");
+      const mensaje = document.getElementById("mensaje");
+      const audio = document.getElementById("audio-clic");
+    
+      const imagenes = [
+        "./Imagenes/death note.png",  // índice 0
+        "./Imagenes/reglas.jpg",      // índice 1
+        "./Imagenes/2.jpg",           // índice 2
+        "./Imagenes/3.jpg",           // índice 3
+        "./Imagenes/death note.png"   // índice 0
+      ];
+    
+      let indice = 0;
+    
+      libreta.addEventListener("click", () => {
+        if (indice >= imagenes.length - 1) return;
+    
+        indice++;
+    
+        libreta.style.opacity = 0;
+    
+        setTimeout(() => {
+          libreta.src = imagenes[indice];
+    
+          
+          switch (indice) {
+            case 1:
+              mensaje.textContent = "Lee el contenido";
+              audio.play().catch((e) => {
+                console.log("Reproducción bloqueada por el navegador", e);
+              });
+              break;
+            case 2:
+              mensaje.textContent = "Pasa a la siguiente página";
+              break;
+            case 3:
+              mensaje.textContent = "Deja la libreta";
+              break;
+            case 4:
+            mensaje.textContent = "Vistete de femboy L";
+            break;
+          }
+    
+          if (indice > 0) {
+            libreta.classList.remove("libreta");
+            libreta.classList.add("pagina");
+          }
+    
+          libreta.style.transition = "opacity 0.5s ease";
+          libreta.style.opacity = 1;
+        }, 100);
+      });
+    </script>
+
+    <!--*************************** VOLVER AL INICIO ***************************************-->
+    <!-- Icono pixel Death Note en esquina inferior derecha -->
+    <a href="../index.html" class="icono-deathnote" title="Pagina principal">
+        <!-- Aquí pon la imagen pixel de Death Note -->
+        <img src="./1.png" alt="Icono Death Note" width="100" height="100" id="iconoDeathNote">
+    </a> 
+    <script>
+        // Bloquear clic derecho en la imagen
+        const icono = document.getElementById("iconoDeathNote");
+        icono.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+      </script>
+    <!--*******************************************************************************-->
+</body>
+</html>

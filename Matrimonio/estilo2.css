@@ -1,0 +1,89 @@
+/************************************ FONDO ***************************************/
+body {
+    background-image: url('./Imagenes/Fondo3.jpg');
+    background-size: cover; /* Ajusta el tamaño para cubrir toda la pantalla */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; /* Para que no se mueva al hacer scroll */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Algo tierno */
+    color: #fff; /* O ajusta según el fondo */
+    overflow: hidden; /* ✨ Oculta el scroll completamente */
+    height: 100vh;
+}
+/******************************* MENSAJE DE AYUDA ***************************************/
+.mensaje {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 1rem;
+    animation: parpadeo 2s infinite;
+  }
+  /* Animación de parpadeo suave */
+  @keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+/******************************* DEATH NOTE ***************************************/
+  /* Imagen centrada verticalmente */
+  .contenedor-libreta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    width: 100vw;  /* Ocupa todo el ancho de la pantalla */
+    position: fixed; /* 🔒 Fija el contenedor en la pantalla */
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+/* Estilo normal para la libreta pequeña */
+.libreta {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    height: auto;
+    border: 3px solid white;
+    box-shadow: 0 0 20px white;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Nueva clase para imágenes a pantalla completa */
+  .pagina {
+    width: auto;
+    height: 100vh; /* Que ocupe toda la altura de la pantalla */
+    max-width: 100%;
+    object-fit: contain;
+    border: none;
+    box-shadow: none;
+  }
+/*******************************************************************************************/
+#libreta {
+    opacity: 1;
+    /* No es necesario poner transition aquí, si lo manejas por JS */
+  }
+  
+/******************************* ENLACE INICIO **************************************************/
+.icono-deathnote {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: block;
+    cursor: pointer;
+    z-index: 1000; /* Que esté por encima */
+}
+
+.icono-deathnote img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease;
+}
+
+.icono-deathnote:hover img {
+    transform: scale(1.25);
+}
